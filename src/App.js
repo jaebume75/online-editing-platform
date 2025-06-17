@@ -1,6 +1,17 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
+const sampleMedia = [
+  { type: "image", src: "https://images.pexels.com/photos/1402787/pexels-photo-1402787.jpeg" },
+  { type: "image", src: "https://images.pexels.com/photos/375570/pexels-photo-375570.jpeg" },
+  { type: "image", src: "https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg" },
+  { type: "image", src: "https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg" },
+  { type: "image", src: "https://images.pexels.com/photos/145939/pexels-photo-145939.jpeg" },
+  { type: "image", src: "https://images.pexels.com/photos/210186/pexels-photo-210186.jpeg" },
+  { type: "image", src: "https://images.pexels.com/photos/356378/pexels-photo-356378.jpeg" },
+  { type: "image", src: "https://images.pexels.com/photos/167699/pexels-photo-167699.jpeg" }
+];
+
 export default function OnlineEditingPlatform() {
   const [file, setFile] = useState(null);
   const [instructions, setInstructions] = useState("");
@@ -17,7 +28,7 @@ export default function OnlineEditingPlatform() {
         </nav>
       </header>
 
-      <main className="px-6 py-12 max-w-5xl mx-auto">
+      <main className="px-6 py-12 max-w-6xl mx-auto">
         <motion.section
           className="text-center mb-12"
           initial={{ opacity: 0, y: -20 }}
@@ -77,6 +88,29 @@ export default function OnlineEditingPlatform() {
             </motion.button>
           </div>
         </motion.div>
+
+        <section className="mt-20">
+          <h2 className="text-2xl font-semibold mb-6 text-center">🎨 AI 예시 콘텐츠</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {sampleMedia.map((item, index) => (
+              <div key={index} className="overflow-hidden rounded-xl shadow hover:scale-105 transition">
+                {item.type === 'image' ? (
+                  <img
+                    src={item.src}
+                    alt={`샘플${index}`}
+                    className="w-full h-48 object-cover"
+                  />
+                ) : (
+                  <video
+                    src={item.src}
+                    controls
+                    className="w-full h-48 object-cover"
+                  />
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
       </main>
 
       <footer className="text-center text-xs text-gray-500 py-6 border-t border-gray-800">
