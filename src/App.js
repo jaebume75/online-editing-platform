@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Input } from "./components/Input";
 import { Textarea } from "./components/Textarea";
@@ -36,7 +35,7 @@ export default function OnlineEditingPlatform() {
             const uploadedFile = e.dataTransfer.files[0];
             setFile(uploadedFile);
           }}
-          className={\`flex flex-col justify-center items-center border-2 border-dashed rounded p-6 transition \${dragActive ? "border-blue-400 bg-gray-800" : "border-gray-700 bg-gray-800"}\`}
+          className={`flex flex-col justify-center items-center border-2 border-dashed rounded p-6 transition ${dragActive ? "border-blue-400 bg-gray-800" : "border-gray-700 bg-gray-800"}`}
         >
           <h3 className="text-lg font-semibold mb-2">1. 콘텐츠 업로드</h3>
           <Input type="file" onChange={(e) => setFile(e.target.files?.[0])} />
@@ -60,7 +59,7 @@ export default function OnlineEditingPlatform() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {sampleMedia.map((item, index) => (
             <div key={index} className="overflow-hidden rounded-xl shadow hover:scale-105 transition">
-              <img src={item.src} alt={\`샘플\${index}\`} className="w-full h-48 object-cover" />
+              <img src={item.src} alt={`샘플${index}`} className="w-full h-48 object-cover" />
             </div>
           ))}
         </div>
