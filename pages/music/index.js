@@ -1,0 +1,1 @@
+export default function Music() { return <div className="p-12 text-center text-2xl">Music Page (Coming Soon)</div>; }

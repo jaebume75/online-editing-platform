@@ -1,0 +1,1 @@
+export default function Signup() { return <div className="p-12 text-center text-2xl">Sign Up</div>; }
