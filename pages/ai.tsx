@@ -1,0 +1,1 @@
+export default function Ai() { return <div>ai page</div>; }
